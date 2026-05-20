@@ -53,29 +53,19 @@
     <h1>Get Your Free Sustainability<br>Impact Guide</h1>
     <p>A practical starter guide for organizations ready to measure, report, and strengthen their social and environmental impact. No jargon — just actionable steps.</p>
 
-    <div class="free-stuff-form-wrap">
-      <form id="freeStuffForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-group">
-          <label for="fs-name">Your Name</label>
-          <input type="text" id="fs-name" name="name" placeholder="Joelle Petrus" required autocomplete="name">
-        </div>
-        <div class="form-group">
-          <label for="fs-email">Email Address</label>
-          <input type="email" id="fs-email" name="email" placeholder="you@organization.org" required autocomplete="email">
-        </div>
-        <div class="form-group">
-          <label for="fs-org">Organization (optional)</label>
-          <input type="text" id="fs-org" name="organization" placeholder="Your organization name" autocomplete="organization">
-        </div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Download Free Guide →</button>
-      </form>
-      <div id="freeStuffSuccess" style="display:none; text-align:center; padding:2rem 0;">
-        <div style="font-size:2.5rem; margin-bottom:1rem;">✅</div>
-        <h3 style="color:white; margin-bottom:0.5rem;">You're in!</h3>
-        <p style="color:rgba(255,255,255,0.7);">Check your inbox — your guide is on its way.</p>
-      </div>
-      <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); margin-top:1rem; text-align:center;">No spam. Unsubscribe any time.</p>
+    <!-- HubSpot Form Embed — paste your embed script below -->
+    <div id="hubspot-guide-form" style="max-width:520px; margin:0 auto;">
+      <!-- Example:
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+      <script>
+        hbspt.forms.create({ region: "na2", portalId: "YOUR_PORTAL_ID", formId: "YOUR_FORM_ID" });
+      </script>
+      -->
+      <p style="color:rgba(255,255,255,0.5); font-size:0.875rem; padding:1.5rem; border:2px dashed rgba(255,255,255,0.2); border-radius:8px; text-align:center;">
+        HubSpot form will appear here.
+      </p>
     </div>
+    <p style="font-size:0.78rem; color:rgba(255,255,255,0.35); margin-top:1rem; text-align:center;">No spam. Unsubscribe any time.</p>
   </section>
 
   <!-- Newsletter -->
@@ -84,14 +74,17 @@
       <div class="section-label">Stay Connected</div>
       <h2>Join the Newsletter</h2>
       <p class="section-subtitle" style="margin:0 auto 2.5rem;">Get practical insights on sustainability, impact measurement, and global development — straight to your inbox.</p>
-      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="max-width:420px; margin:0 auto;">
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Enter your email address" required autocomplete="email" style="width:100%; padding:14px 18px; border:1.5px solid var(--border); border-radius:var(--radius); font-family:'Inter',sans-serif; font-size:0.9375rem; background:var(--bg); outline:none; transition:border-color var(--transition);">
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Subscribe →</button>
-      </form>
-      <div id="contactSuccess" style="display:none; margin-top:1.5rem;">
-        <p style="color:var(--teal); font-weight:500;">✅ You're subscribed! Welcome to the community.</p>
+      <!-- HubSpot Newsletter Embed — paste your embed script below -->
+      <div id="hubspot-newsletter-form" style="max-width:420px; margin:0 auto;">
+        <!-- Example:
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+          hbspt.forms.create({ region: "na2", portalId: "YOUR_PORTAL_ID", formId: "YOUR_FORM_ID" });
+        </script>
+        -->
+        <p style="color:var(--text-muted); font-size:0.875rem; padding:1.5rem; border:2px dashed var(--border); border-radius:8px; text-align:center;">
+          HubSpot newsletter form will appear here.
+        </p>
       </div>
     </div>
   </section>
@@ -113,7 +106,7 @@
           <div class="footer-col-heading">Ways to Get in Touch</div>
           <div class="footer-btn-list">
             <a href="https://meetings-na2.hubspot.com/joelle-petrus?uuid=69f3a4a6-a9e7-40e0-9b97-94e263d80967" target="_blank" rel="noopener" class="btn btn-dark">Book a Free Call</a>
-            <a href="mailto:info@jmpetrus.com" class="btn btn-dark">Email Me</a>
+            <a href="mailto:hello@navisignal.app" class="btn btn-dark">Email Me</a>
             <a href="free-stuff.html#newsletter" class="btn btn-dark">Join My Newsletter</a>
           </div>
           <div class="footer-social-row">
