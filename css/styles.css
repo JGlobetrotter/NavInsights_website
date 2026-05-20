@@ -446,16 +446,30 @@ a:hover { color: var(--teal-light); }
 .hero-full {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 620px;
+  min-height: 100vh;
   /* Add your globe image: background-image: url('assets/hero-globe.jpg'); */
-  background: linear-gradient(135deg, #a8d5e2 0%, #4a90a4 25%, #1a5c7a 55%, #0b2034 85%);
+  background: linear-gradient(160deg, #0A1C2E 0%, #132B44 60%, #2A3F59 100%);
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+}
+
+/* ── Hero logo banner ────────────────────────── */
+.hero-logo-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 24px 0;
+  flex: 1;
+}
+.hero-logo-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
 }
 .hero-tagline-box {
   background: rgba(0,0,0,0.88);
