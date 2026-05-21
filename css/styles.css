@@ -659,3 +659,148 @@ a:hover { color: var(--teal-light); }
   .why-image { min-height: 320px; }
   .footer-top-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
+
+/* ══════════════════════════════════════════════
+   NEW HOMEPAGE SECTIONS
+   ══════════════════════════════════════════════ */
+
+/* ── Who this is for ─────────────────────────── */
+.audience-section { padding: 100px 24px; background: var(--bg-white); }
+.audience-inner { max-width: var(--max-width); margin: 0 auto; }
+.audience-intro { max-width: 600px; margin-bottom: 3rem; font-size: 1.0625rem; }
+.audience-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.audience-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  padding: 36px 32px;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.audience-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.audience-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--navy); }
+.audience-card p { font-size: 0.9rem; margin-bottom: 0; }
+
+/* ── What we help with ───────────────────────── */
+.help-section { padding: 100px 24px; background: var(--bg); }
+.help-inner { max-width: var(--max-width); margin: 0 auto; }
+.help-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 3rem; }
+.help-card {
+  background: white; border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px 24px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.help-card:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+.help-card-icon { font-size: 1.5rem; margin-bottom: 1rem; display: block; }
+.help-card h3 { font-size: 1rem; margin-bottom: 0.6rem; color: var(--navy); }
+.help-card p { font-size: 0.875rem; margin-bottom: 0; line-height: 1.65; }
+
+/* ── Why Navisignal Insights (homepage) ──────── */
+.why-new-section {
+  background: linear-gradient(160deg, #001C34 0%, #0A2A43 100%);
+  padding: 100px 24px; color: white;
+}
+.why-new-inner {
+  max-width: var(--max-width); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+}
+.why-new-section .section-label { color: var(--gold); }
+.why-new-section h2 { color: white; margin-bottom: 1.5rem; }
+.why-new-body { color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.85; margin-bottom: 0; }
+.why-bullets { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.why-bullets li { display: flex; gap: 14px; align-items: flex-start; }
+.why-bullet-mark { color: var(--gold); font-weight: 700; flex-shrink: 0; line-height: 1.65; }
+.why-bullet-text { font-size: 0.9375rem; color: rgba(255,255,255,0.78); line-height: 1.65; }
+
+/* ── Newsletter ──────────────────────────────── */
+.newsletter-section { padding: 100px 24px; background: var(--bg-white); }
+.newsletter-inner { max-width: 580px; margin: 0 auto; text-align: center; }
+.newsletter-inner h2 { margin-bottom: 1rem; }
+.newsletter-inner > p { margin-bottom: 2.5rem; font-size: 1rem; }
+.newsletter-form-wrap {
+  background: white; border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 36px 40px; text-align: left;
+}
+.newsletter-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.newsletter-form-wrap .form-group { margin-bottom: 0; }
+.newsletter-submit { width: 100%; justify-content: center; margin-top: 16px; }
+
+/* ── Homepage CTA ────────────────────────────── */
+.home-cta-section { background: var(--navy); padding: 100px 24px; text-align: center; }
+.home-cta-inner { max-width: 600px; margin: 0 auto; }
+.home-cta-section h2 { color: white; margin-bottom: 1rem; }
+.home-cta-section p { color: rgba(255,255,255,0.72); margin-bottom: 2.5rem; font-size: 1.0625rem; }
+.home-cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; align-items: center; }
+.home-cta-link {
+  color: rgba(255,255,255,0.65); font-size: 0.875rem; font-weight: 500;
+  text-decoration: underline; text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+.home-cta-link:hover { color: white; }
+
+/* ══════════════════════════════════════════════
+   SERVICES PAGE
+   ══════════════════════════════════════════════ */
+
+/* ── Services page hero ──────────────────────── */
+.services-page-hero { padding: 140px 24px 80px; background: var(--bg); }
+.services-page-hero-inner { max-width: 720px; }
+.services-page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: 1.25rem; }
+.services-page-hero > div > p { font-size: 1.0625rem; color: var(--text-muted); max-width: 640px; margin-bottom: 0; }
+
+/* ── Service Pillars ─────────────────────────── */
+.pillar-section { padding: 96px 24px; background: var(--bg-white); }
+.pillar-section.alt { background: var(--bg); }
+.pillar-inner { max-width: var(--max-width); margin: 0 auto; }
+.pillar-intro { max-width: 640px; margin-bottom: 3rem; }
+.pillar-intro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0; }
+.pillar-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+.pillar-card {
+  background: white; border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 36px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  display: flex; flex-direction: column;
+}
+.pillar-card:hover { border-color: var(--gold); box-shadow: var(--shadow-lg); }
+.pillar-card h3 { font-size: 1.1rem; margin-bottom: 0.875rem; color: var(--navy); }
+.pillar-card-body { font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 0; flex-grow: 1; }
+.pillar-meta {
+  margin-top: 1.5rem; padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.pillar-meta-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 3px;
+}
+.pillar-meta-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0; }
+
+/* ── Services CTA ────────────────────────────── */
+.services-cta-section { background: var(--bg); padding: 96px 24px; text-align: center; }
+.services-cta-inner { max-width: 600px; margin: 0 auto; }
+.services-cta-section h2 { margin-bottom: 1rem; }
+.services-cta-section > div > p { font-size: 1.0625rem; margin-bottom: 2.5rem; }
+.services-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE — new components
+   ══════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .help-grid { grid-template-columns: repeat(2,1fr); }
+  .why-new-inner { grid-template-columns: 1fr; gap: 48px; }
+  .pillar-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .audience-section,
+  .help-section,
+  .why-new-section,
+  .newsletter-section,
+  .home-cta-section,
+  .pillar-section,
+  .services-cta-section { padding: 64px 24px; }
+  .audience-grid { grid-template-columns: 1fr; }
+  .help-grid { grid-template-columns: 1fr; }
+  .newsletter-row { grid-template-columns: 1fr; }
+  .newsletter-form-wrap { padding: 28px 24px; }
+  .services-page-hero { padding: 120px 24px 56px; }
+}
