@@ -515,7 +515,17 @@ a:hover { color: var(--teal-light); }
   line-height: 1.15;
   margin-bottom: 1.25rem;
 }
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
 .hero-info-box p { color: rgba(255,255,255,0.82); margin-bottom: 1.5rem; font-size: 0.9375rem; line-height: 1.7; }
+.hero-cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.hero-microcopy { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.6; margin-bottom: 0; }
 .hero-social { display: flex; gap: 10px; margin-top: 1.25rem; align-items: center; }
 .social-icon-link {
   display: flex; align-items: center; justify-content: center;
