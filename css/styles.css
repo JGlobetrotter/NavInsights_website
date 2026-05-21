@@ -124,7 +124,7 @@ a:hover { color: var(--teal-light); }
   text-decoration: none;
 }
 .nav-logo-mark { width: 30px; height: 30px; flex-shrink: 0; }
-.nav-logo-banner-img { width: 44vw; height: auto; display: block; max-width: 640px; }
+.nav-logo-banner-img { width: 44vw; height: auto; display: block; max-width: 640px; mix-blend-mode: screen; }
 .nav-logo-wordmark { display: flex; flex-direction: column; line-height: 1.1; }
 .nav-logo-wordmark strong { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.1em; color: white; }
 .nav-logo-wordmark span { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.18em; color: var(--gold); }
