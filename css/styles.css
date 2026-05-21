@@ -113,7 +113,7 @@ a:hover { color: var(--teal-light); }
 
 .nav-inner {
   max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
-  height: 72px; display: flex; align-items: center; justify-content: space-between;
+  height: 96px; display: flex; align-items: center; justify-content: space-between;
 }
 
 .nav-logo {
@@ -124,7 +124,7 @@ a:hover { color: var(--teal-light); }
   text-decoration: none;
 }
 .nav-logo-mark { width: 30px; height: 30px; flex-shrink: 0; }
-.nav-logo-banner-img { height: 52px; width: auto; display: block; }
+.nav-logo-banner-img { width: 33vw; height: auto; display: block; max-width: 480px; }
 .nav-logo-wordmark { display: flex; flex-direction: column; line-height: 1.1; }
 .nav-logo-wordmark strong { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.1em; color: white; }
 .nav-logo-wordmark span { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.18em; color: var(--gold); }
@@ -146,7 +146,7 @@ a:hover { color: var(--teal-light); }
 .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 .nav-overlay {
-  display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+  display: none; position: fixed; top: 96px; left: 0; right: 0; bottom: 0;
   background: var(--navy); z-index: 999; padding: 32px 24px; overflow-y: auto;
 }
 .nav-overlay.open { display: block; }
