@@ -485,7 +485,7 @@ a:hover { color: var(--teal-light); }
   background: rgba(28,28,28,0.92);
   padding: 36px 44px;
   align-self: flex-start;
-  max-width: 600px;
+  max-width: 460px;
 }
 .hero-content-box h1 {
   font-family: 'Inter', sans-serif;
@@ -723,7 +723,38 @@ a:hover { color: var(--teal-light); }
 .newsletter-form-wrap .form-group { margin-bottom: 0; }
 .newsletter-submit { width: 100%; justify-content: center; margin-top: 16px; }
 
-/* ── Homepage CTA ────────────────────────────── */
+/* ── Newsletter + Freebies (two-column) ──────── */
+.newsletter-freebies-section { padding: 100px 24px; background: var(--bg); }
+.newsletter-freebies-inner {
+  max-width: var(--max-width); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+}
+.newsletter-col h2,
+.freebies-col h2 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); margin-bottom: 1rem; }
+.newsletter-col > p,
+.freebies-col > p { font-size: 0.9375rem; margin-bottom: 1.5rem; }
+.newsletter-form-wrap { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 32px; }
+.newsletter-form-wrap .form-group { margin-bottom: 0; }
+.newsletter-submit { width: 100%; justify-content: center; }
+.freebies-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 1.25rem; }
+.freebie-item {
+  display: flex; align-items: center; gap: 14px;
+  background: white; border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px 20px;
+  font-size: 0.9rem; color: var(--text); font-weight: 500;
+  text-decoration: none; transition: all var(--transition);
+}
+.freebie-item:hover { border-color: var(--gold); box-shadow: var(--shadow); color: var(--navy); }
+.freebie-icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--gold); color: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.9rem; flex-shrink: 0;
+}
+.freebies-more { font-size: 0.875rem; font-weight: 500; color: var(--teal); }
+.freebies-more:hover { color: var(--teal-light); }
+
+/* ── Homepage CTA (kept for reference) ──────── */
 .home-cta-section { background: var(--navy); padding: 100px 24px; text-align: center; }
 .home-cta-inner { max-width: 600px; margin: 0 auto; }
 .home-cta-section h2 { color: white; margin-bottom: 1rem; }
@@ -792,10 +823,11 @@ a:hover { color: var(--teal-light); }
   .audience-section,
   .help-section,
   .why-new-section,
-  .newsletter-section,
+  .newsletter-freebies-section,
   .home-cta-section,
   .pillar-section,
   .services-cta-section { padding: 64px 24px; }
+  .newsletter-freebies-inner { grid-template-columns: 1fr; gap: 48px; }
   .audience-grid { grid-template-columns: 1fr; }
   .help-grid { grid-template-columns: 1fr; }
   .newsletter-row { grid-template-columns: 1fr; }
