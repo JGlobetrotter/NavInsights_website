@@ -104,7 +104,7 @@ a:hover { color: var(--teal-light); }
 
 /* ── Navigation ──────────────────────────────── */
 .navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: sticky; top: 0; left: 0; right: 0; z-index: 1000;
   background: #0B1728;
   border-bottom: none;
   transition: all var(--transition);
@@ -146,7 +146,7 @@ a:hover { color: var(--teal-light); }
 .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 .nav-overlay {
-  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; padding-top: 100px;
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   background: var(--navy); z-index: 999; padding: 32px 24px; overflow-y: auto;
 }
 .nav-overlay.open { display: block; }
@@ -457,7 +457,7 @@ a:hover { color: var(--teal-light); }
 .hero-full {
   position: relative;
   width: 100%;
-  min-height: 67vh;
+  min-height: 80vh;
   /* Add your globe image: background-image: url('assets/hero-globe.jpg'); */
   background: linear-gradient(160deg, #001C34 0%, #0A2A43 60%, #0A2A43 100%);
   background-size: cover;
