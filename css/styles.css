@@ -2,22 +2,25 @@
    Navisignal Insights — Main Stylesheet
    ============================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
 
 :root {
-  --navy:       #0A1C2E;
-  --teal:       #2A3F59;
-  --teal-light: #132B44;
-  --gold:       #E6D6A6;
-  --gold-light: #EDE0B8;
-  --bg:         #F8F6F1;
+  --navy:       #0A2A43;   /* Primary Navy */
+  --midnight:   #001C34;   /* Darker Navy — gradients, dividers */
+  --teal:       #CBA00B;   /* Repurposed → Star Gold (links, interactive) */
+  --teal-light: #E5BA20;   /* Gold hover state */
+  --gold:       #CBA00B;   /* Star Gold — focal points, CTAs */
+  --gold-light: #E5BA20;   /* Lighter gold */
+  --steel:      #5A6B76;   /* Steel Grey — secondary text, diagram lines */
+  --mist:       #DDE7EE;   /* Mist Blue — chart highlights, subtle bg */
+  --bg:         #F9FAFB;   /* Off-white — primary light bg */
   --bg-white:   #FFFFFF;
-  --text:       #0A1C2E;
-  --text-muted: #6B778C;
-  --text-light: #A6B2BF;
-  --border:     #E2DDD6;
-  --shadow:     0 2px 20px rgba(11,32,52,0.08);
-  --shadow-lg:  0 8px 40px rgba(11,32,52,0.12);
+  --text:       #0A2A43;   /* Navy */
+  --text-muted: #5A6B76;   /* Steel Grey */
+  --text-light: #DDE7EE;   /* Mist Blue */
+  --border:     #DDE7EE;   /* Mist Blue */
+  --shadow:     0 2px 20px rgba(10,42,67,0.08);
+  --shadow-lg:  0 8px 40px rgba(10,42,67,0.12);
   --radius:     4px;
   --radius-lg:  12px;
   --transition: 0.25s ease;
@@ -37,14 +40,21 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.2;
   color: var(--navy);
 }
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; }
-h2 { font-size: clamp(2rem, 4vw, 3rem);   font-weight: 500; }
-h3 { font-size: clamp(1.3rem, 2vw, 1.75rem); font-weight: 500; }
-h4 { font-size: 1.1rem; font-weight: 600; font-family: 'Inter', sans-serif; }
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: clamp(2rem, 4vw, 3rem);   font-weight: 600; }
+h3 { font-size: clamp(1.3rem, 2vw, 1.75rem); font-weight: 600; }
+h4 { font-size: 1.1rem; font-weight: 600; }
+
+blockquote, .pullout {
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+}
 
 p { margin-bottom: 1.25rem; color: var(--text-muted); }
 p:last-child { margin-bottom: 0; }
@@ -85,22 +95,21 @@ a:hover { color: var(--teal-light); }
   cursor: pointer;
   border: none;
 }
-.btn-primary  { background: var(--teal); color: white; }
-.btn-primary:hover { background: var(--teal-light); color: white; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(42,63,89,0.3); }
+.btn-primary  { background: var(--gold); color: var(--navy); font-weight: 600; }
+.btn-primary:hover { background: var(--gold-light); color: var(--navy); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(203,160,11,0.35); }
 .btn-outline  { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
 .btn-outline:hover { background: var(--navy); color: white; }
 .btn-outline-white { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.55); }
-.btn-outline-white:hover { background: white; color: var(--navy); }
+.btn-outline-white:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 
 /* ── Navigation ──────────────────────────────── */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid transparent;
+  background: var(--navy);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   transition: all var(--transition);
 }
-.navbar.scrolled { border-bottom-color: var(--border); box-shadow: var(--shadow); }
+.navbar.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.35); }
 
 .nav-inner {
   max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
@@ -109,40 +118,41 @@ a:hover { color: var(--teal-light); }
 
 .nav-logo {
   display: flex; align-items: center; gap: 10px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.95rem; font-weight: 700; color: var(--navy);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase;
   text-decoration: none;
 }
 .nav-logo-mark { width: 30px; height: 30px; flex-shrink: 0; }
 .nav-logo-wordmark { display: flex; flex-direction: column; line-height: 1.1; }
-.nav-logo-wordmark strong { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.1em; color: var(--navy); }
-.nav-logo-wordmark span { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.18em; color: var(--teal); }
-.nav-logo:hover { color: var(--navy); }
+.nav-logo-wordmark strong { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.1em; color: white; }
+.nav-logo-wordmark span { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.18em; color: var(--gold); }
+.nav-logo:hover .nav-logo-wordmark strong { color: var(--gold); }
 
 .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
-.nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text); letter-spacing: 0.02em; }
-.nav-links a:hover, .nav-links a.active { color: var(--teal); }
-.nav-cta { background: var(--navy); color: white !important; padding: 10px 22px; border-radius: var(--radius); }
-.nav-cta:hover { background: var(--teal) !important; color: white !important; }
+.nav-links a { font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.7); letter-spacing: 0.02em; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-cta { background: var(--gold); color: var(--navy) !important; padding: 10px 22px; border-radius: var(--radius); font-weight: 600; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
 
 .nav-toggle {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer; padding: 4px;
 }
-.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); transition: all var(--transition); }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: white; transition: all var(--transition); }
 .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 .nav-overlay {
   display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
-  background: white; z-index: 999; padding: 32px 24px; overflow-y: auto;
+  background: var(--navy); z-index: 999; padding: 32px 24px; overflow-y: auto;
 }
 .nav-overlay.open { display: block; }
 .nav-overlay .nav-links { flex-direction: column; align-items: start; gap: 0; }
-.nav-overlay .nav-links li { width: 100%; border-bottom: 1px solid var(--border); }
-.nav-overlay .nav-links a { display: block; padding: 18px 0; font-size: 1.1rem; color: var(--text); }
+.nav-overlay .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.nav-overlay .nav-links a { display: block; padding: 18px 0; font-size: 1.1rem; color: rgba(255,255,255,0.8); }
+.nav-overlay .nav-links a:hover { color: var(--gold); }
 .nav-overlay .nav-cta { margin-top: 24px; display: inline-flex; }
 
 /* ── Hero ────────────────────────────────────── */
@@ -440,7 +450,8 @@ a:hover { color: var(--teal-light); }
   box-shadow: none; border: none; padding: 0;
   background: transparent; transform: none;
 }
-.nav-overlay .dropdown-menu a { padding: 14px 0 14px 20px; font-size: 1rem; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+.nav-overlay .dropdown-menu a { padding: 14px 0 14px 20px; font-size: 1rem; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-overlay .dropdown-menu a:hover { color: var(--gold); }
 
 /* ── Hero Full (index page) ──────────────────── */
 .hero-full {
@@ -448,7 +459,7 @@ a:hover { color: var(--teal-light); }
   width: 100%;
   min-height: 100vh;
   /* Add your globe image: background-image: url('assets/hero-globe.jpg'); */
-  background: linear-gradient(160deg, #0A1C2E 0%, #132B44 60%, #2A3F59 100%);
+  background: linear-gradient(160deg, #001C34 0%, #0A2A43 60%, #0A2A43 100%);
   background-size: cover;
   background-position: center;
   display: flex;
