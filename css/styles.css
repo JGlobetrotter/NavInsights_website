@@ -105,15 +105,15 @@ a:hover { color: var(--teal-light); }
 /* ── Navigation ──────────────────────────────── */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: var(--navy);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: #0B1728;
+  border-bottom: none;
   transition: all var(--transition);
 }
 .navbar.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.35); }
 
 .nav-inner {
-  max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
-  height: 96px; display: flex; align-items: center; justify-content: space-between;
+  max-width: var(--max-width); margin: 0 auto; padding: 16px 24px;
+  display: flex; align-items: center; justify-content: space-between;
 }
 
 .nav-logo {
@@ -124,7 +124,7 @@ a:hover { color: var(--teal-light); }
   text-decoration: none;
 }
 .nav-logo-mark { width: 30px; height: 30px; flex-shrink: 0; }
-.nav-logo-banner-img { width: 33vw; height: auto; display: block; max-width: 480px; }
+.nav-logo-banner-img { width: 44vw; height: auto; display: block; max-width: 640px; }
 .nav-logo-wordmark { display: flex; flex-direction: column; line-height: 1.1; }
 .nav-logo-wordmark strong { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.1em; color: white; }
 .nav-logo-wordmark span { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.18em; color: var(--gold); }
@@ -146,7 +146,7 @@ a:hover { color: var(--teal-light); }
 .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 .nav-overlay {
-  display: none; position: fixed; top: 96px; left: 0; right: 0; bottom: 0;
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; padding-top: 100px;
   background: var(--navy); z-index: 999; padding: 32px 24px; overflow-y: auto;
 }
 .nav-overlay.open { display: block; }
@@ -457,14 +457,14 @@ a:hover { color: var(--teal-light); }
 .hero-full {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 67vh;
   /* Add your globe image: background-image: url('assets/hero-globe.jpg'); */
   background: linear-gradient(160deg, #001C34 0%, #0A2A43 60%, #0A2A43 100%);
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   overflow: hidden;
 }
 
@@ -484,13 +484,13 @@ a:hover { color: var(--teal-light); }
 }
 .hero-content-box {
   background: rgba(28,28,28,0.92);
-  padding: 40px 52px;
+  padding: 36px 44px;
   align-self: flex-start;
-  width: 50%;
+  width: 40%;
 }
 .hero-content-box h1 {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1.9rem, 4.5vw, 3.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
   font-weight: 900;
   color: white;
   text-transform: uppercase;
