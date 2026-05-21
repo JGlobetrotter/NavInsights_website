@@ -826,6 +826,32 @@ a:hover { color: var(--teal-light); }
 .services-cta-section > div > p { font-size: 1.0625rem; margin-bottom: 2.5rem; }
 .services-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
+/* ── Kit Commerce / Buy Me a Coffee button ───── */
+.btn-coffee {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  background: var(--gold);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.65rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition), transform 0.1s ease;
+  box-sizing: border-box;
+}
+.btn-coffee:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
 /* ══════════════════════════════════════════════
    RESPONSIVE — new components
    ══════════════════════════════════════════════ */
