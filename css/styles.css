@@ -406,7 +406,7 @@ a:hover { color: var(--teal-light); }
   .stats-inner { grid-template-columns: 1fr 1fr; gap: 20px; }
   .hero { padding: 130px 24px 72px; }
   .page-hero { padding: 120px 24px 64px; }
-  .hero-content-box { max-width: 100%; padding: 24px; }
+  .hero-content-box { width: 100%; padding: 24px; }
   .hero-content-box h1 { font-size: 1.75rem; }
   .hero-info-box { max-width: 100%; padding: 28px 24px; }
   .why-section { grid-template-columns: 1fr; }
@@ -484,9 +484,9 @@ a:hover { color: var(--teal-light); }
 }
 .hero-content-box {
   background: rgba(28,28,28,0.92);
-  padding: 36px 44px;
+  padding: 40px 52px;
   align-self: flex-start;
-  max-width: 460px;
+  width: 50%;
 }
 .hero-content-box h1 {
   font-family: 'Inter', sans-serif;
