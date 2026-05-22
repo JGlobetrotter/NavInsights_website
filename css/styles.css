@@ -915,15 +915,38 @@ a:hover { color: var(--teal-light); }
 .decision-card {
   background: #fff;
   border: 2px solid var(--border);
+  border-top: 4px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2rem;
   cursor: pointer;
   transition: border-color var(--transition), transform var(--transition),
               opacity var(--transition), box-shadow var(--transition);
 }
-.decision-card:hover { border-color: var(--navy); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-.decision-card.active { border-color: var(--navy); box-shadow: var(--shadow-lg); }
-.decision-card.dimmed { opacity: 0.3; transform: scale(0.97); pointer-events: none; }
+.decision-card:hover {
+  border-color: var(--gold);
+  border-top-color: var(--gold);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(10,42,67,0.14);
+}
+.decision-card.active {
+  border-color: var(--gold);
+  border-top-color: var(--gold);
+  box-shadow: 0 16px 48px rgba(10,42,67,0.14);
+}
+.decision-card.dimmed { opacity: 0.25; transform: scale(0.97); pointer-events: none; }
+
+.decision-icon {
+  width: 48px; height: 48px;
+  background: var(--navy);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--gold);
+  transition: background var(--transition), transform 0.2s ease, color var(--transition);
+}
+.decision-card:hover .decision-icon,
+.decision-card.active .decision-icon { background: var(--gold); color: var(--navy); transform: scale(1.08); }
+
 .decision-step {
   font-size: 0.68rem;
   font-weight: 700;
@@ -934,15 +957,32 @@ a:hover { color: var(--teal-light); }
 }
 .decision-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; color: var(--navy); }
 .decision-card > p { font-size: 0.875rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
+
 .decision-hint {
-  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 1.5rem;
+  padding: 10px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.8125rem;
+  font-weight: 600;
   color: var(--text-muted);
-  margin-top: 1.25rem;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
+  transition: all var(--transition);
+  background: transparent;
+  width: 100%;
+  box-sizing: border-box;
 }
-.decision-card.active .decision-hint,
-.decision-card.dimmed .decision-hint { opacity: 0; height: 0; margin: 0; overflow: hidden; }
+.decision-card:hover .decision-hint { background: var(--navy); color: white; border-color: var(--navy); }
+.decision-card.dimmed .decision-hint { opacity: 0; height: 0; margin: 0; padding: 0; overflow: hidden; border: none; }
+.decision-card.active .decision-hint { background: var(--bg); border-color: var(--border); color: var(--text-muted); }
+.decision-hint .hint-open { display: block; }
+.decision-hint .hint-close { display: none; }
+.decision-card.active .decision-hint .hint-open { display: none; }
+.decision-card.active .decision-hint .hint-close { display: block; }
+
 .decision-action {
   display: flex;
   flex-direction: column;
@@ -954,7 +994,7 @@ a:hover { color: var(--teal-light); }
               margin-top 0.3s ease, padding-top 0.3s ease;
 }
 .decision-card.active .decision-action {
-  max-height: 260px;
+  max-height: 280px;
   opacity: 1;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
