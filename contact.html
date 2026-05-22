@@ -115,34 +115,14 @@
           </div>
         </div>
 
-        <!-- Contact form -->
+        <!-- Contact direct -->
         <div class="contact-form">
-          <h3>Send a Message</h3>
-          <form class="newsletter-form-wrap" onsubmit="sendContactEmail(event)">
-            <div class="form-group">
-              <label for="c-name">Your name</label>
-              <input type="text" id="c-name" placeholder="Full name" required>
-            </div>
-            <div class="form-group" style="margin-top:14px;">
-              <label for="c-email">Email address</label>
-              <input type="email" id="c-email" placeholder="you@example.com" required>
-            </div>
-            <div class="form-group" style="margin-top:14px;">
-              <label for="c-topic">What's this about?</label>
-              <select id="c-topic">
-                <option value="Service inquiry">Service inquiry</option>
-                <option value="Project question">Project question</option>
-                <option value="Speaking or collaboration">Speaking or collaboration</option>
-                <option value="General question">General question</option>
-              </select>
-            </div>
-            <div class="form-group" style="margin-top:14px;">
-              <label for="c-message">Message</label>
-              <textarea id="c-message" placeholder="Tell me what you're working on…" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary newsletter-submit" style="margin-top:16px;">Send Message</button>
-            <p class="form-note" style="margin-top:0.75rem;">Opens your email client to send.</p>
-          </form>
+          <div class="newsletter-form-wrap" style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start;">
+            <h3 style="margin:0;">Prefer to write directly?</h3>
+            <p style="margin:0;color:var(--text-muted);font-size:0.9375rem;">Drop an email and Joelle will get back to you.</p>
+            <a href="mailto:hello@navisignal.app" class="btn btn-primary" style="width:100%;justify-content:center;">Email hello@navisignal.app</a>
+            <a href="https://wa.me/12026742263" target="_blank" rel="noopener" class="btn btn-dark" style="width:100%;justify-content:center;">Message on WhatsApp</a>
+          </div>
         </div>
 
       </div>
@@ -185,16 +165,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    function sendContactEmail(e) {
-      e.preventDefault();
-      var name    = document.getElementById('c-name').value;
-      var email   = document.getElementById('c-email').value;
-      var topic   = document.getElementById('c-topic').value;
-      var message = document.getElementById('c-message').value;
-      var body    = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
-      window.location.href = 'mailto:hello@navisignal.app?subject=' + encodeURIComponent(topic) + '&body=' + encodeURIComponent(body);
-    }
-  </script>
 </body>
 </html>
