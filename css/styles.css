@@ -968,12 +968,16 @@ a:hover { color: var(--teal-light); }
   border-top: 1px solid var(--border);
 }
 .contact-info-strip-inner {
-  max-width: 800px;
+  max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
-  gap: 48px;
+  gap: 40px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
+}
+.contact-detail-icon svg { color: var(--navy); display: block; }
+@media (max-width: 700px) {
+  .contact-info-strip-inner { justify-content: flex-start; }
 }
 
 @media (max-width: 800px) {
