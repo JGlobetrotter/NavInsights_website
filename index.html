@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 </head>
 <body>
 
@@ -169,10 +170,16 @@
         <h2>Tools &amp; Templates</h2>
         <p>Ready-to-use resources to help your organization navigate sustainability, impact, and technology adoption.</p>
         <div class="freebies-list">
-          <a href="https://donate.stripe.com/eVqdR2eGJ11m6tJ8Czc3m05" target="_blank" rel="noopener" class="freebie-item">
-            <span class="freebie-icon">↓</span>
+          <div class="freebie-item freebie-item--toggle" id="ngo-ai-toggle" role="button" tabindex="0" aria-expanded="false">
+            <span class="freebie-icon" id="ngo-ai-icon">↓</span>
             <span>Recommended CORE AI &amp; Tech Stack for NGOs</span>
-          </a>
+          </div>
+          <div class="freebie-form-drop" id="ngo-ai-form">
+            <form class="kit-resource-form" action="https://app.kit.com/forms/9474837/subscriptions" method="post">
+              <input type="email" name="email_address" placeholder="Your email address" required>
+              <button type="submit" class="btn btn-navy">Get My Download</button>
+            </form>
+          </div>
           <div class="freebie-item freebie-item--toggle" id="ai-freebie-toggle" role="button" tabindex="0" aria-expanded="false">
             <span class="freebie-icon" id="ai-freebie-icon">↓</span>
             <span>Can We Use AI for This?</span>
@@ -229,6 +236,18 @@
   <script src="js/main.js"></script>
   <script>
     (function() {
+      // NGO AI tech stack toggle
+      var ngoToggle = document.getElementById('ngo-ai-toggle');
+      var ngoDrop   = document.getElementById('ngo-ai-form');
+      var ngoIcon   = document.getElementById('ngo-ai-icon');
+      if (ngoToggle && ngoDrop) {
+        function openNgo() { ngoDrop.classList.add('open'); ngoToggle.setAttribute('aria-expanded','true'); ngoIcon.textContent='×'; ngoDrop.querySelector('input[type="email"]').focus(); }
+        function closeNgo(){ ngoDrop.classList.remove('open'); ngoToggle.setAttribute('aria-expanded','false'); ngoIcon.textContent='↓'; }
+        ngoToggle.addEventListener('click', function(){ ngoDrop.classList.contains('open') ? closeNgo() : openNgo(); });
+        ngoToggle.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); ngoToggle.click(); } });
+      }
+    })();
+    (function() {
       var toggle = document.getElementById('ai-freebie-toggle');
       var drop = document.getElementById('ai-freebie-form');
       var icon = document.getElementById('ai-freebie-icon');
@@ -252,5 +271,65 @@
       });
     })();
   </script>
+
+  <!-- Kit sticky bar: Recommended CORE AI & Tech Stack for NGOs -->
+  <form action="https://app.kit.com/forms/9474837/subscriptions" style="background-color:#0A2A43;" class="seva-form formkit-form" method="post" data-sv-form="9474837" data-uid="8840a42d7d" data-format="sticky bar" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Your download is on its way — check your email.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800">
+    <div class="formkit-container" data-stacked="false">
+      <div class="formkit-content" style="color:#ffffff;font-weight:700;" data-element="content"><p>Get the Navisignal Recommended CORE AI &amp; Tech List for NGOs — free.</p></div>
+      <div style="color:#ffffff;">
+        <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+        <div data-element="fields" style="color:#ffffff;" class="seva-fields formkit-fields">
+          <div class="formkit-field">
+            <input class="formkit-input" name="email_address" style="color:#444951;border-color:#CBA00B;border-radius:4px;font-weight:700;" aria-label="Email Address" placeholder="Email Address" required="" type="email">
+          </div>
+          <button data-element="submit" class="formkit-submit" style="color:#0A2A43;background-color:#CBA00B;border-radius:4px;font-weight:700;">
+            <div class="formkit-spinner"><div></div><div></div><div></div></div>
+            <span>Get It Free</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <style>
+      .formkit-form[data-uid="8840a42d7d"] *{box-sizing:border-box;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-powered-by-convertkit-container{display:none !important;}
+      .formkit-form[data-uid="8840a42d7d"][data-format="modal"]{display:none;}
+      .formkit-form[data-uid="8840a42d7d"][data-format="slide in"]{display:none;}
+      .formkit-form[data-uid="8840a42d7d"][data-format="sticky bar"]{display:none;}
+      .formkit-sticky-bar .formkit-form[data-uid="8840a42d7d"][data-format="sticky bar"]{display:block;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-input,.formkit-form[data-uid="8840a42d7d"] .formkit-select,.formkit-form[data-uid="8840a42d7d"] .formkit-checkboxes{width:100%;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-submit{border:0;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:700;overflow:hidden;padding:0;position:relative;vertical-align:middle;margin-bottom:15px;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-submit:hover > span,.formkit-form[data-uid="8840a42d7d"] .formkit-submit:focus > span{background-color:rgba(0,0,0,0.08);}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-submit > span{display:block;transition:all 300ms ease-in-out;padding:12px 24px;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;flex:1 0 auto;line-height:1.4;margin:0;transition:border-color ease-out 300ms;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-input:focus{outline:none;border-color:#CBA00B;transition:border-color ease 300ms;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-input::placeholder{color:inherit;opacity:0.8;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-alert:empty{display:none;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-spinner{display:flex;height:0;width:0;margin:0 auto;position:absolute;top:0;left:0;right:0;overflow:hidden;text-align:center;transition:all 300ms ease-in-out;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;animation:formkit-bouncedelay-8840a42d7d 1.4s infinite ease-in-out both;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-spinner > div:nth-child(1){animation-delay:-0.32s;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-spinner > div:nth-child(2){animation-delay:-0.16s;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}
+      .formkit-form[data-uid="8840a42d7d"]{box-sizing:border-box;max-width:none !important;padding:15px 45px 0;width:100%;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-container{margin:0 auto;max-width:940px;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-content{flex-grow:1;margin-bottom:20px;margin-right:30px;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-submit > span{padding:9px 12px 10px;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-field{margin:0 0 15px 0;flex:1 0 100%;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-submit{display:block;margin:0 0 15px 0;flex:1 0 100%;width:100%;}
+      .formkit-form[data-uid="8840a42d7d"] .formkit-field .formkit-input{box-shadow:0px 1px 2px rgba(0,0,0,0.05);padding:9px 12px;}
+      @media screen and (min-width:700px){
+        .formkit-form[data-uid="8840a42d7d"] .formkit-container{display:flex;align-items:center;}
+        .formkit-form[data-uid="8840a42d7d"] .formkit-content{margin-bottom:15px;}
+        .formkit-form[data-uid="8840a42d7d"] .formkit-fields{display:flex;flex-wrap:wrap;margin:0 auto;}
+        .formkit-form[data-uid="8840a42d7d"] .formkit-field,.formkit-form[data-uid="8840a42d7d"] .formkit-submit{margin:0 5px 15px;}
+        .formkit-form[data-uid="8840a42d7d"] .formkit-field{flex:100 1 auto;}
+        .formkit-form[data-uid="8840a42d7d"] .formkit-submit{flex:1 1 auto;width:auto;}
+      }
+      @keyframes formkit-bouncedelay-8840a42d7d{0%,80%,100%{transform:scale(0);}40%{transform:scale(1);}}
+    </style>
+  </form>
 </body>
 </html>
