@@ -294,7 +294,7 @@ a:hover { color: var(--teal-light); }
 .page-hero-inner { max-width: 680px; margin: 0 auto; }
 .page-hero h1 { margin-bottom: 1rem; }
 .page-hero p { font-size: 1.0625rem; max-width: 540px; margin: 0 auto; color: var(--text-muted); }
-.about-hero { background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../assets/FUTURI~1.PNG') center/cover no-repeat; }
+.about-hero { background: linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)), url('../assets/FUTURI~1.PNG') center/cover no-repeat; }
 
 /* ── About Page ──────────────────────────────── */
 .about-page-grid { display: grid; grid-template-columns: 280px 1fr; gap: 72px; align-items: start; }
