@@ -75,6 +75,55 @@ setupEmailForm('leadMagnetForm',  'leadMagnetSuccess');
 setupEmailForm('freeStuffForm',   'freeStuffSuccess');
 setupEmailForm('contactForm',     'contactSuccess');
 
+// Buyer filter (services page)
+(function() {
+  var buyerCards  = document.querySelectorAll('.buyer-card');
+  var pillarCards = document.querySelectorAll('.pillar-card');
+  var resetBtn    = document.getElementById('buyer-reset');
+  var stayCta     = document.getElementById('buyer-stay-cta');
+  if (!buyerCards.length) return;
+
+  function clearFilter() {
+    buyerCards.forEach(function(c) { c.classList.remove('active','dimmed'); c.setAttribute('aria-pressed','false'); });
+    pillarCards.forEach(function(c) { c.classList.remove('highlighted','dimmed'); });
+    if (stayCta) stayCta.classList.remove('visible');
+  }
+
+  buyerCards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      var filter    = card.dataset.filter;
+      var isActive  = card.classList.contains('active');
+      clearFilter();
+      if (isActive) return;
+
+      card.classList.add('active');
+      card.setAttribute('aria-pressed','true');
+      buyerCards.forEach(function(c) { if (c !== card) c.classList.add('dimmed'); });
+
+      if (window.gtag) gtag('event', 'buyer_type_selected', { buyer_type: filter });
+
+      if (filter === 'explore') {
+        pillarCards.forEach(function(c) { c.classList.add('dimmed'); });
+        if (stayCta) { stayCta.classList.add('visible'); stayCta.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+      } else {
+        if (stayCta) stayCta.classList.remove('visible');
+        pillarCards.forEach(function(pc) {
+          var audiences = (pc.dataset.audience || '').split(' ');
+          pc.classList.add(audiences.indexOf(filter) !== -1 ? 'highlighted' : 'dimmed');
+        });
+        var firstPillar = document.getElementById('sustainability');
+        if (firstPillar) firstPillar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+    });
+  });
+
+  if (resetBtn) resetBtn.addEventListener('click', clearFilter);
+})();
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
