@@ -85,18 +85,26 @@
       <div class="section-label">Stay Connected</div>
       <h2>Join the Newsletter</h2>
       <p class="section-subtitle" style="margin:0 auto 2.5rem;">Get practical insights on sustainability, impact measurement, and global development — straight to your inbox.</p>
-      <!-- HubSpot Newsletter Embed — paste your embed script below -->
-      <div id="hubspot-newsletter-form" style="max-width:420px; margin:0 auto;">
-        <!-- Example:
-        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-        <script>
-          hbspt.forms.create({ region: "na2", portalId: "YOUR_PORTAL_ID", formId: "YOUR_FORM_ID" });
-        </script>
-        -->
-        <p style="color:var(--text-muted); font-size:0.875rem; padding:1.5rem; border:2px dashed var(--border); border-radius:8px; text-align:center;">
-          HubSpot newsletter form will appear here.
-        </p>
-      </div>
+      <form class="newsletter-form-wrap" action="https://app.kit.com/forms/9472170/subscriptions" method="post" style="max-width:420px; margin:0 auto; text-align:left;">
+        <div class="form-group">
+          <label for="fs-name">First name</label>
+          <input type="text" id="fs-name" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+        </div>
+        <div class="form-group" style="margin-top:14px;">
+          <label for="fs-email">Email address</label>
+          <input type="email" id="fs-email" name="email_address" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+        <fieldset class="form-tags">
+          <legend>What interests you?</legend>
+          <div class="form-tags-options">
+            <label class="form-tag-option"><input type="checkbox" name="tags[]" value="15916330"> Corporate Sustainability</label>
+            <label class="form-tag-option"><input type="checkbox" name="tags[]" value="19658098"> International Development</label>
+            <label class="form-tag-option"><input type="checkbox" name="tags[]" value="19714377"> AI</label>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary newsletter-submit">Join the Newsletter</button>
+        <p class="form-note" style="margin-top:1rem;">No spam. Unsubscribe any time.</p>
+      </form>
     </div>
   </section>
 

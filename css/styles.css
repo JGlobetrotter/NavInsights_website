@@ -826,6 +826,56 @@ a:hover { color: var(--teal-light); }
 .services-cta-section > div > p { font-size: 1.0625rem; margin-bottom: 2.5rem; }
 .services-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
+/* ── Kit Newsletter Tag Checkboxes ───────────── */
+.form-tags { border: none; padding: 0; margin: 14px 0 16px; min-width: 0; }
+.form-tags legend {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  padding: 0;
+}
+.form-tags-options { display: flex; flex-direction: column; gap: 8px; }
+.form-tag-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text);
+  user-select: none;
+}
+.form-tag-option input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 3px;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  transition: background var(--transition), border-color var(--transition);
+}
+.form-tag-option input[type="checkbox"]:checked {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.form-tag-option input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+}
+
 /* ── Kit Commerce / Buy Me a Coffee button ───── */
 .btn-coffee {
   display: inline-flex;
