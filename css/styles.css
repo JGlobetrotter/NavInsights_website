@@ -1077,10 +1077,19 @@ a:hover { color: var(--teal-light); }
 .resource-info h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--navy); }
 .resource-info p { font-size: 0.875rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
 .resource-item .btn { white-space: nowrap; flex-shrink: 0; }
+.freebie-item--toggle { cursor: pointer; }
+.freebie-item--toggle:hover { border-color: var(--gold); box-shadow: var(--shadow); color: var(--navy); }
+.freebie-form-drop { display: none; padding: 14px 16px; border: 1px solid var(--border); border-top: none; border-radius: 0 0 var(--radius) var(--radius); background: var(--bg); }
+.freebie-form-drop.open { display: block; }
+.kit-resource-form { display: flex; flex-direction: column; gap: 0.5rem; flex-shrink: 0; min-width: 220px; }
+.kit-resource-form input[type="email"] { padding: 10px 14px; border: 1.5px solid var(--border); border-radius: var(--radius); font-size: 0.875rem; font-family: inherit; color: var(--text); width: 100%; }
+.kit-resource-form input[type="email"]:focus { outline: none; border-color: var(--navy); }
+.kit-resource-form .btn { width: 100%; justify-content: center; text-align: center; }
 
 @media (max-width: 600px) {
   .resource-item { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .resource-item .btn { width: 100%; justify-content: center; }
+  .kit-resource-form { width: 100%; }
 }
 
 /* ── Kit Commerce / Buy Me a Coffee button ───── */

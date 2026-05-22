@@ -173,10 +173,17 @@
             <span class="freebie-icon">↓</span>
             <span>Recommended CORE AI &amp; Tech Stack for NGOs</span>
           </a>
-          <a href="free-stuff.html" class="freebie-item">
-            <span class="freebie-icon">↓</span>
+          <div class="freebie-item freebie-item--toggle" id="ai-freebie-toggle" role="button" tabindex="0" aria-expanded="false">
+            <span class="freebie-icon" id="ai-freebie-icon">↓</span>
             <span>Can We Use AI for This?</span>
-          </a>
+          </div>
+          <div class="freebie-form-drop" id="ai-freebie-form">
+            <form class="kit-resource-form" action="https://app.kit.com/forms/9474269/subscriptions" method="post">
+              <input type="hidden" name="tags[]" value="19714394">
+              <input type="email" name="email_address" placeholder="Your email address" required>
+              <button type="submit" class="btn btn-navy">Get My Download</button>
+            </form>
+          </div>
         </div>
         <a href="free-stuff.html" class="freebies-more">View all free resources →</a>
       </div>
@@ -220,5 +227,30 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var toggle = document.getElementById('ai-freebie-toggle');
+      var drop = document.getElementById('ai-freebie-form');
+      var icon = document.getElementById('ai-freebie-icon');
+      if (!toggle || !drop) return;
+      function openDrop() {
+        drop.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        icon.textContent = '×';
+        drop.querySelector('input[type="email"]').focus();
+      }
+      function closeDrop() {
+        drop.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        icon.textContent = '↓';
+      }
+      toggle.addEventListener('click', function() {
+        drop.classList.contains('open') ? closeDrop() : openDrop();
+      });
+      toggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.click(); }
+      });
+    })();
+  </script>
 </body>
 </html>
