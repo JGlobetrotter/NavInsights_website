@@ -75,6 +75,44 @@ setupEmailForm('leadMagnetForm',  'leadMagnetSuccess');
 setupEmailForm('freeStuffForm',   'freeStuffSuccess');
 setupEmailForm('contactForm',     'contactSuccess');
 
+// Pillar collapse/expand (services page)
+(function() {
+  var sections = document.querySelectorAll('.pillar-section');
+  if (!sections.length) return;
+
+  function expandPillar(section) {
+    section.classList.add('expanded');
+    var h = section.querySelector('.pillar-header');
+    if (h) h.setAttribute('aria-expanded', 'true');
+  }
+  function collapsePillar(section) {
+    section.classList.remove('expanded');
+    var h = section.querySelector('.pillar-header');
+    if (h) h.setAttribute('aria-expanded', 'false');
+  }
+  function collapseAll() { sections.forEach(collapsePillar); }
+
+  sections.forEach(function(section) {
+    var header = section.querySelector('.pillar-header');
+    if (!header) return;
+    header.addEventListener('click', function() {
+      section.classList.contains('expanded') ? collapsePillar(section) : expandPillar(section);
+    });
+    header.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); header.click(); }
+    });
+  });
+
+  if (window.location.hash) {
+    var target = document.querySelector(window.location.hash);
+    if (target && target.classList.contains('pillar-section')) expandPillar(target);
+  }
+
+  window._expandPillar   = expandPillar;
+  window._collapsePillar = collapsePillar;
+  window._collapseAllPillars = collapseAll;
+})();
+
 // Buyer filter (services page)
 (function() {
   var buyerCards  = document.querySelectorAll('.buyer-card');
@@ -87,12 +125,13 @@ setupEmailForm('contactForm',     'contactSuccess');
     buyerCards.forEach(function(c) { c.classList.remove('active','dimmed'); c.setAttribute('aria-pressed','false'); });
     pillarCards.forEach(function(c) { c.classList.remove('highlighted','dimmed'); });
     if (stayCta) stayCta.classList.remove('visible');
+    if (window._collapseAllPillars) window._collapseAllPillars();
   }
 
   buyerCards.forEach(function(card) {
     card.addEventListener('click', function() {
-      var filter    = card.dataset.filter;
-      var isActive  = card.classList.contains('active');
+      var filter   = card.dataset.filter;
+      var isActive = card.classList.contains('active');
       clearFilter();
       if (isActive) return;
 
@@ -111,8 +150,11 @@ setupEmailForm('contactForm',     'contactSuccess');
           var audiences = (pc.dataset.audience || '').split(' ');
           pc.classList.add(audiences.indexOf(filter) !== -1 ? 'highlighted' : 'dimmed');
         });
-        var firstPillar = document.getElementById('sustainability');
-        if (firstPillar) firstPillar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.querySelectorAll('.pillar-section').forEach(function(s) {
+          if (s.querySelector('.pillar-card.highlighted') && window._expandPillar) window._expandPillar(s);
+        });
+        var firstExpanded = document.querySelector('.pillar-section.expanded');
+        if (firstExpanded) firstExpanded.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
 

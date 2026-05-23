@@ -788,9 +788,9 @@ a:hover { color: var(--teal-light); }
    ══════════════════════════════════════════════ */
 
 /* ── Services page hero ──────────────────────── */
-.services-page-hero { padding: 140px 24px 80px; background: var(--bg); }
-.services-page-hero-inner { max-width: 720px; }
-.services-page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: 1.25rem; }
+.services-page-hero { padding: 120px 24px 60px; background: var(--bg); text-align: center; }
+.services-page-hero-inner { max-width: 720px; margin: 0 auto; }
+.services-page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: 0; }
 .services-page-hero > div > p { font-size: 1.0625rem; color: var(--text-muted); max-width: 640px; margin-bottom: 0; }
 
 /* ── Buyer Filter ────────────────────────────── */
@@ -825,8 +825,17 @@ a:hover { color: var(--teal-light); }
 .pillar-section { padding: 96px 24px; background: var(--bg-white); }
 .pillar-section.alt { background: var(--bg); }
 .pillar-inner { max-width: var(--max-width); margin: 0 auto; }
-.pillar-intro { max-width: 640px; margin-bottom: 3rem; }
-.pillar-intro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0; }
+.pillar-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; cursor: pointer; user-select: none; }
+.pillar-header:hover .pillar-header-text h2 { color: var(--gold); }
+.pillar-header-text { flex: 1; }
+.pillar-header-text h2 { font-size: clamp(1.4rem, 2.8vw, 2rem); margin-bottom: 0; transition: color 0.2s; }
+.pillar-chevron { flex-shrink: 0; margin-top: 6px; color: var(--text-muted); transition: transform 0.3s ease; }
+.pillar-section.expanded .pillar-chevron { transform: rotate(180deg); }
+.pillar-cards-wrap { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+.pillar-section.expanded .pillar-cards-wrap { max-height: 4000px; }
+.pillar-cards-wrap > .pillar-cards { padding-top: 2.5rem; }
+.coming-soon-card { max-width: 520px; margin: 2.5rem auto 0; background: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem 2.5rem; text-align: center; }
+.coming-soon-card p { color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem; }
 .pillar-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
 .pillar-card {
   background: white; border: 1px solid var(--border);
