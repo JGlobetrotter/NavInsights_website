@@ -857,6 +857,9 @@ a:hover { color: var(--teal-light); }
   text-transform: uppercase; color: var(--gold); margin-bottom: 3px;
 }
 .pillar-meta-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0; }
+.pillar-meta-text ul { margin: 0; padding-left: 1.1rem; }
+.pillar-meta-text li { margin-bottom: 0.2rem; }
+.pillar-meta-text li:last-child { margin-bottom: 0; }
 
 /* ── Services CTA ────────────────────────────── */
 .services-cta-section { background: var(--bg); padding: 96px 24px; text-align: center; }
