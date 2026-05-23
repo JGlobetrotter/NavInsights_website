@@ -147,10 +147,10 @@ a:hover { color: var(--teal-light); }
 
 .nav-overlay {
   display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--navy); z-index: 999; padding: 32px 24px; overflow-y: auto;
+  background: var(--navy); z-index: 999; padding: 80px 24px 32px; overflow-y: auto;
 }
 .nav-overlay.open { display: block; }
-.nav-overlay .nav-links { flex-direction: column; align-items: start; gap: 0; }
+.nav-overlay .nav-links { display: flex; flex-direction: column; align-items: start; gap: 0; }
 .nav-overlay .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .nav-overlay .nav-links a { display: block; padding: 18px 0; font-size: 1.1rem; color: rgba(255,255,255,0.8); }
 .nav-overlay .nav-links a:hover { color: var(--gold); }
@@ -1184,4 +1184,63 @@ a:hover { color: var(--teal-light); }
   .newsletter-row { grid-template-columns: 1fr; }
   .newsletter-form-wrap { padding: 28px 24px; }
   .services-page-hero { padding: 120px 24px 56px; }
+}
+
+/* ── Lead Magnet Popup ───────────────────────── */
+.lm-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,42,67,0.72);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.lm-overlay.open { display: flex; }
+.lm-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 36px 36px;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(10,42,67,0.3);
+}
+.lm-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.lm-close:hover { color: var(--navy); }
+.lm-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+.lm-title { font-size: 1.45rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; line-height: 1.25; }
+.lm-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.lm-form { display: flex; flex-direction: column; gap: 10px; }
+.lm-form input[type="email"] {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--text);
+  background: var(--bg);
+  outline: none;
+  transition: border-color var(--transition);
+}
+.lm-form input[type="email"]:focus { border-color: var(--gold); background: white; }
+.lm-form .btn { width: 100%; justify-content: center; }
+.lm-note { font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 8px; margin-bottom: 0; }
+.lm-success { text-align: center; padding: 8px 0; }
+.lm-success p:first-child { font-size: 1.1rem; font-weight: 600; color: var(--navy); }
+@media (max-width: 480px) {
+  .lm-card { padding: 32px 24px 28px; }
 }
