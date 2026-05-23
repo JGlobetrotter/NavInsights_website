@@ -864,10 +864,10 @@ a:hover { color: var(--teal-light); }
 .pillar-meta-text li:last-child { margin-bottom: 0; }
 
 /* ── Services CTA ────────────────────────────── */
-.services-cta-section { background: var(--bg); padding: 96px 24px; text-align: center; }
+.services-cta-section { background: var(--navy); border-top: 2px solid rgba(203,160,11,0.35); padding: 96px 24px; text-align: center; }
 .services-cta-inner { max-width: 600px; margin: 0 auto; }
-.services-cta-section h2 { margin-bottom: 1rem; }
-.services-cta-section > div > p { font-size: 1.0625rem; margin-bottom: 2.5rem; }
+.services-cta-section h2 { margin-bottom: 1rem; color: #ffffff; }
+.services-cta-section > div > p { font-size: 1.0625rem; margin-bottom: 2.5rem; color: rgba(255,255,255,0.75); }
 .services-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
 /* ── Kit Newsletter Tag Checkboxes ───────────── */
