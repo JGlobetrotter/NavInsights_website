@@ -788,9 +788,11 @@ a:hover { color: var(--teal-light); }
    ══════════════════════════════════════════════ */
 
 /* ── Services page hero ──────────────────────── */
-.services-page-hero { padding: 120px 24px 60px; background: var(--bg); text-align: center; }
-.services-page-hero-inner { max-width: 720px; margin: 0 auto; }
-.services-page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: 0; }
+.services-page-hero { padding: 120px 24px 64px; background: var(--midnight); background-image: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 28px 28px; text-align: center; position: relative; overflow: hidden; }
+.services-page-hero::before { content: ''; position: absolute; top: -110px; right: -110px; width: 440px; height: 440px; border-radius: 50%; border: 1px solid rgba(203,160,11,0.2); pointer-events: none; }
+.services-page-hero::after { content: ''; position: absolute; bottom: -70px; left: -70px; width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(203,160,11,0.11); pointer-events: none; }
+.services-page-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+.services-page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: 0; color: #ffffff; }
 
 
 /* ── Buyer Filter ────────────────────────────── */
@@ -862,10 +864,10 @@ a:hover { color: var(--teal-light); }
 .pillar-meta-text li:last-child { margin-bottom: 0; }
 
 /* ── Services CTA ────────────────────────────── */
-.services-cta-section { background: var(--bg); padding: 96px 24px; text-align: center; }
+.services-cta-section { background: var(--navy); border-top: 2px solid rgba(203,160,11,0.35); padding: 96px 24px; text-align: center; }
 .services-cta-inner { max-width: 600px; margin: 0 auto; }
-.services-cta-section h2 { margin-bottom: 1rem; }
-.services-cta-section > div > p { font-size: 1.0625rem; margin-bottom: 2.5rem; }
+.services-cta-section h2 { margin-bottom: 1rem; color: #ffffff; }
+.services-cta-section > div > p { font-size: 1.0625rem; margin-bottom: 2.5rem; color: rgba(255,255,255,0.75); }
 .services-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
 /* ── Kit Newsletter Tag Checkboxes ───────────── */
