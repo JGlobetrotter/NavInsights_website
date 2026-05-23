@@ -103,11 +103,6 @@ setupEmailForm('contactForm',     'contactSuccess');
     });
   });
 
-  if (window.location.hash) {
-    var target = document.querySelector(window.location.hash);
-    if (target && target.classList.contains('pillar-section')) expandPillar(target);
-  }
-
   window._expandPillar   = expandPillar;
   window._collapsePillar = collapsePillar;
   window._collapseAllPillars = collapseAll;
@@ -125,6 +120,7 @@ setupEmailForm('contactForm',     'contactSuccess');
     buyerCards.forEach(function(c) { c.classList.remove('active','dimmed'); c.setAttribute('aria-pressed','false'); });
     pillarCards.forEach(function(c) { c.classList.remove('highlighted','dimmed'); });
     if (stayCta) stayCta.classList.remove('visible');
+    if (resetBtn) resetBtn.classList.remove('visible');
     if (window._collapseAllPillars) window._collapseAllPillars();
   }
 
@@ -138,6 +134,7 @@ setupEmailForm('contactForm',     'contactSuccess');
       card.classList.add('active');
       card.setAttribute('aria-pressed','true');
       buyerCards.forEach(function(c) { if (c !== card) c.classList.add('dimmed'); });
+      if (resetBtn) resetBtn.classList.add('visible');
 
       if (window.gtag) gtag('event', 'buyer_type_selected', { buyer_type: filter });
 
@@ -153,8 +150,10 @@ setupEmailForm('contactForm',     'contactSuccess');
         document.querySelectorAll('.pillar-section').forEach(function(s) {
           if (s.querySelector('.pillar-card.highlighted') && window._expandPillar) window._expandPillar(s);
         });
-        var firstExpanded = document.querySelector('.pillar-section.expanded');
-        if (firstExpanded) firstExpanded.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(function() {
+          var firstExpanded = document.querySelector('.pillar-section.expanded');
+          if (firstExpanded) firstExpanded.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
       }
     });
 
