@@ -429,11 +429,11 @@ a:hover { color: var(--teal-light); }
 .dropdown-toggle { display: flex; align-items: center; gap: 4px; cursor: pointer; }
 .dropdown-toggle::after { content: '⌄'; font-size: 0.65rem; opacity: 0.7; }
 .dropdown-menu {
-  position: absolute; top: calc(100% + 8px); left: 50%;
+  position: absolute; top: 100%; left: 50%;
   transform: translateX(-50%);
   background: white; border: 1px solid var(--border);
   border-radius: 8px; box-shadow: var(--shadow-lg);
-  min-width: 180px; padding: 8px 0;
+  min-width: 180px; padding: 16px 0 8px;
   opacity: 0; pointer-events: none;
   transition: opacity 0.2s ease; z-index: 200;
   list-style: none;
