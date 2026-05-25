@@ -114,6 +114,7 @@ setupEmailForm('contactForm',     'contactSuccess');
   var pillarCards = document.querySelectorAll('.pillar-card');
   var resetBtn    = document.getElementById('buyer-reset');
   var stayCta     = document.getElementById('buyer-stay-cta');
+  var scrollHint  = document.getElementById('buyer-scroll-hint');
   if (!buyerCards.length) return;
 
   function clearFilter() {
@@ -121,6 +122,7 @@ setupEmailForm('contactForm',     'contactSuccess');
     pillarCards.forEach(function(c) { c.classList.remove('highlighted','dimmed'); });
     if (stayCta) stayCta.classList.remove('visible');
     if (resetBtn) resetBtn.classList.remove('visible');
+    if (scrollHint) scrollHint.classList.remove('visible');
     if (window._collapseAllPillars) window._collapseAllPillars();
   }
 
@@ -140,9 +142,10 @@ setupEmailForm('contactForm',     'contactSuccess');
 
       if (filter === 'explore') {
         pillarCards.forEach(function(c) { c.classList.add('dimmed'); });
-        if (stayCta) { stayCta.classList.add('visible'); stayCta.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+        if (stayCta) stayCta.classList.add('visible');
       } else {
         if (stayCta) stayCta.classList.remove('visible');
+        if (scrollHint) scrollHint.classList.add('visible');
         pillarCards.forEach(function(pc) {
           var audiences = (pc.dataset.audience || '').split(' ');
           pc.classList.add(audiences.indexOf(filter) !== -1 ? 'highlighted' : 'dimmed');
@@ -150,10 +153,6 @@ setupEmailForm('contactForm',     'contactSuccess');
         document.querySelectorAll('.pillar-section').forEach(function(s) {
           if (s.querySelector('.pillar-card.highlighted') && window._expandPillar) window._expandPillar(s);
         });
-        setTimeout(function() {
-          var firstExpanded = document.querySelector('.pillar-section.expanded');
-          if (firstExpanded) firstExpanded.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 80);
       }
     });
 
