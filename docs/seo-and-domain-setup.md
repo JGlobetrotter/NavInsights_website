@@ -43,20 +43,39 @@ All 7 main pages now have:
 
 ## 3. After the Domain Goes Live — Final Steps
 
-1. **Submit to Google Search Console**
-   - Go to [search.google.com/search-console](https://search.google.com/search-console)
-   - Add property → URL prefix → `https://navisignalinsights.com`
-   - Verify ownership (easiest: HTML tag method — paste a meta tag into index.html `<head>`)
-   - Submit sitemap: `https://navisignalinsights.com/sitemap.xml`
+### Google Search Console (free)
 
-2. **Test Open Graph tags**
-   - LinkedIn: [linkedin.com/post-inspector](https://www.linkedin.com/post-inspector/)
-   - Facebook: [developers.facebook.com/tools/debug](https://developers.facebook.com/tools/debug/)
-   - Paste your URL and confirm the title, description, and image appear correctly
+Google Search Console is Google's free tool for helping your site get found. It shows which searches bring people to your site, lets you submit pages to be indexed faster, and alerts you to any crawl issues.
 
-3. **Check Google can index the site**
-   - In Search Console → URL Inspection → paste `https://navisignalinsights.com`
-   - Click "Request Indexing" for the homepage
+**Steps:**
+
+1. Go to [search.google.com/search-console](https://search.google.com/search-console)
+2. Sign in with your Google account
+3. Click **Add property** → choose **URL prefix** → enter `https://navisignalinsights.com`
+4. Verify ownership:
+   - Choose **HTML tag** method
+   - Google gives you a `<meta>` tag that looks like: `<meta name="google-site-verification" content="xxxx">`
+   - Paste it into the `<head>` of `index.html` (ask Claude to do this — takes 2 minutes)
+   - Click **Verify** in Search Console
+5. Submit your sitemap:
+   - In the left sidebar → **Sitemaps**
+   - Enter `sitemap.xml` and click **Submit**
+   - Full URL Google will use: `https://navisignalinsights.com/sitemap.xml`
+6. Request indexing for the homepage:
+   - Go to **URL Inspection** → paste `https://navisignalinsights.com`
+   - Click **Request Indexing**
+
+Data starts appearing within a few days. You'll see clicks, impressions, and keyword rankings over time.
+
+### Test how your pages look when shared
+
+- LinkedIn: [linkedin.com/post-inspector](https://www.linkedin.com/post-inspector/) — paste your URL to preview how it appears in a LinkedIn post
+- Facebook: [developers.facebook.com/tools/debug](https://developers.facebook.com/tools/debug/) — same idea for Facebook
+
+### Check Google can index the site
+
+- In Search Console → **URL Inspection** → paste any page URL
+- Click **Request Indexing** for important pages (homepage, services, about)
 
 ---
 
