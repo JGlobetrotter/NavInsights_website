@@ -1105,6 +1105,8 @@ a:hover { color: var(--teal-light); }
 /* ── Resource list (Free Stuff page) ─────────── */
 .btn-navy { background: var(--navy); color: #fff; }
 .btn-navy:hover { background: var(--midnight); color: #fff; transform: translateY(-1px); }
+.btn-white { background: #fff; color: var(--navy); }
+.btn-white:hover { background: #f0f0f0; color: var(--navy); transform: translateY(-1px); }
 
 .resource-list { margin-top: 2.5rem; }
 .resource-item {
