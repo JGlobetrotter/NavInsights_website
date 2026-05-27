@@ -24,6 +24,8 @@ All Rights Reserved. Licensing requires permission.
 └── docs/               Setup and reference guides
 ```
 
+Licensing requires permission
+
 ## Deployment
 Every push to `main` auto-deploys via `.github/workflows/deploy.yml`.
 
